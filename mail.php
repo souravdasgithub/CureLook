@@ -18,5 +18,5 @@ if($email!=NULL){
     mail($to,$subject,$txt,$headers);
 }
 //redirect
-header("Location:confirm_booking.html");
+header("Location:confirm_booking.php");
 ?>
