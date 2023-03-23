@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <title>CureLook - find doctors</title>
+</head>
+
+<body>
+
+  <header>
+    <div class="container-nav">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html"><b> CureLook</b></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="doctor_list.html">Doctors</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Departments
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Child Specialist</a></li>
+                  <li><a class="dropdown-item" href="#">Dental</a></li>
+                  <li><a class="dropdown-item" href="#">Cardiologist</a></li>
+                  <li><a class="dropdown-item" href="#">General Physician</a></li>
+                </ul>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Contact Us</a>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book
+              an appointment</button>
+
+          </div>
+        </div>
+      </nav>
+
+
+
+      <!-- appointment Modal -->
+      <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="appointmentModalLabel">Book your appointment</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+              <form action="mail.php" method="post">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Enter full name</label>
+                  <input type="text" class="form-control" name="name" id="name"
+                    placeholder="Full name">
+                </div>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Enter email</label>
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Enter phone number</label>
+                  <input type="text" class="form-control" name="phone" id="phone"
+                    placeholder="Phone number">
+                </div>
+
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Enter address with pin</label>
+                  <input type="text" class="form-control" name="address" id="address"
+                    placeholder="Address">
+                </div>
+
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Doctor's name</label>
+                  <input type="text" class="form-control" name="docname" id="docname"
+                    placeholder="Doctor">
+                </div>
+
+                <div class="col-mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Departments</label>
+                  <select class="form-select" name="departments" id="departments">
+                    <option selected>Select Departments</option>
+                    <option value="1">Child Specialist</option>
+                    <option value="2">Dental</option>
+                    <option value="3">Cardiologist</option>
+                    <option value="3">General Physician</option>
+                  </select>
+                </div>
+                <br>
+                <div class="mb-3">
+                  <label for="formGroupExampleInput2" class="form-label">Enter date of appointment</label>
+                  <input type="text" class="form-control" name="date" id="date"
+                    placeholder="Date of appointment">
+                </div>
+
+                <br>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                <br>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Book Appointment</button>
+                </div>
+              </form>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </header>
+
+  <div class="page-container">
+
+  </div>
+
+
+
+  <footer class=" pt-5 pb-4 footer-bg-color">
+
+    <div class="container text-center text-md-left footer-bg-color">
+
+      <div class="row text-center text-md-left">
+
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-upperlowercase mb-4 font-weight-bold text-white">CureLook</h5>
+          <p>CureLook HO : 30/50 Chatterjee Para Road, Jagadish Apartment, Flat no ‘C’, Barrackpore, 24pgs (N)
+            pin- 700122</p>
+
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-white">Departments</h5>
+          <p>
+            <a href="#" class="footer-anchor" style="text-decoration: none;"> Child Specialist</a>
+          </p>
+          <p>
+            <a href="#" class="footer-anchor" style="text-decoration: none;"> Dental</a>
+          </p>
+          <p>
+            <a href="#" class="footer-anchor" style="text-decoration: none;"> Cardiologist</a>
+          </p>
+          <p>
+            <a href="#" class="footer-anchor" style="text-decoration: none;"> General Physician</a>
+          </p>
+
+        </div>
+
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-white">Useful links</h5>
+          <p>
+            <a href="#" class="footer-anchor" style="text-decoration: none;"> About Us</a>
+          </p>
+          <p>
+            <a href="#" class="footer-anchor" style="text-decoration: none;"> Contact Us</a>
+          </p>
+
+
+        </div>
+
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-white">Contact</h5>
+          <p>
+            <i class="fas fa-home mr-3"></i>Barrackpore, 24pgs (N) pin- 700122
+          </p>
+          <p>
+            <i class="fas fa-envelope mr-3"></i>souravinbox.sd@gmail.com
+          </p>
+          <p>
+            <i class="fas fa-phone mr-3"></i>+92 3162859445
+          </p>
+          <p>
+            <i class="fas fa-print	 mr-3"></i>+01 335 633 77
+          </p>
+        </div>
+
+      </div>
+
+      <hr class="mb-4">
+
+      <div class="row align-items-center">
+
+        <div class="col-md-7 col-lg-8">
+          <p> Copyright ©2020 All rights reserved by:
+            <a href="#" style="text-decoration: none;">
+              <strong class="text-white">CureLook</strong>
+            </a>
+          </p>
+
+        </div>
+
+        <div class="col-md-5 col-lg-4">
+          <div class="text-center text-md-right">
+
+            <ul class="list-unstyled list-inline">
+              <li class="list-inline-item">
+                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                    class="fab fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                    class="fab fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                    class="fab fa-google-plus"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                    class="fab fa-linkedin-in"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px;"><i
+                    class="fab fa-youtube"></i></a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+     -->
+</body>
+
+</html>
